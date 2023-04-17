@@ -1,0 +1,65 @@
+{   
+   "users": [
+    {
+        "id": 1,
+        "name": "Haksemin Karagözlü",
+        "profilephoto": "/images/Haxpp.jpeg",
+        "post": "/images/posts/post0.png",
+        "corp": "MingApp",
+        "posttext": "Günlerden yine WorkDay...",
+
+        "comments": [
+            {
+                "post0_1": "Wow tavuk bey yine yakıyosunuz!",
+                "post0_2": "Ayran'a selam söyle :)"
+            }
+        ]
+
+    },
+    {
+        "id": 2,
+        "name": "Tavuk Işıtmak",
+        "profilephoto": "/images/tavuk.jpeg",
+        "post": "/images/posts/post1.png",
+        "corp": "OrkDigital",
+        "posttext": "Biraz oyun oynuyoduk işte :)",
+
+        "comments": [
+            {
+                "post1_1": "Abi facebook heckleyebiliyo musun",
+                "post1_2": "Setup çok iyiymiş bu arada"
+            }
+        ]
+
+    },
+
+    {
+        "id": 3,
+        "name": "Merve Yorgancılar Işıtmak",
+        "profilephoto": "/images/merveyorg.jpeg",
+        "post": "/images/posts/post2.png",
+        "corp": "Yorglass",
+        "posttext": "Yeni Ofisimmm! Manzarası nasıl?",
+
+        "comments": [
+            {
+                "post2_1": "Merve hanım ofisiniz hayırlı olsun",
+                "post2_2": "Çamlıca kulesini de görüyormuş!"
+            }
+        ]
+
+
+
+
+    }
+
+
+    
+   ]
+    
+
+
+
+
+
+}
