@@ -3,8 +3,8 @@
     {
         "id": 1,
         "name": "Haksemin Karagözlü",
-        "profilephoto": "/images/Haxpp.jpeg",
-        "post": "/images/posts/post0.png",
+        "profilephoto": "../images/Haxpp.jpeg",
+        "post": "../images/posts/post0.png",
         "corp": "MingApp",
         "posttext": "Günlerden yine WorkDay...",
 
@@ -19,8 +19,8 @@
     {
         "id": 2,
         "name": "Tavuk Işıtmak",
-        "profilephoto": "/images/tavuk.jpeg",
-        "post": "/images/posts/post1.png",
+        "profilephoto": "../images/tavuk.jpeg",
+        "post": "../images/posts/post1.png",
         "corp": "OrkDigital",
         "posttext": "Biraz oyun oynuyoduk işte :)",
 

@@ -1,25 +1,9 @@
 import React, { useState } from "react";
 import { Alert, Button, Image, Linking, SafeAreaView, Text, TextInput, TouchableOpacity, View } from "react-native";
 import axios from "axios";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Feed from "./Feed";
+
+
 import 'react-native-screens';
-
-const Stack = createNativeStackNavigator();
-
-
-
-function App(){
-  return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
-        <Stack.Screen name="Login" component={LoginScreen} options={{headerShown:false}} />
-        <Stack.Screen name="Feed" component={Feed} options={{headerShown:false}} />
-      </Stack.Navigator>
-    </NavigationContainer>);
-}
-
 
 
 
@@ -43,7 +27,7 @@ function LoginScreen({ navigation }: { navigation: any }) {
       
       axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
       console.log(token);
-      navigation.navigate('Feed');
+      navigation.navigate('Tabs');
       
     } catch (error: any) {
       
@@ -53,6 +37,8 @@ function LoginScreen({ navigation }: { navigation: any }) {
     }
     
   }
+
+
 
 
   //Mail ve Pass control
@@ -85,14 +71,14 @@ function LoginScreen({ navigation }: { navigation: any }) {
     console.log("EşleştiPass!");
     //Tokenization
    
-    //navigation.navigate('Feed');
+    //navigation.navigate('Tabs');
   }
 
   return (
     //Login Screen
     <SafeAreaView style={{ flex:1}} >
       <View style={{alignItems:"center",backgroundColor:"white", flex:1}}>
-        <Image style={{flex:1, resizeMode:"contain", width:200,left:-5,top:80}} source={require("./images/logo.webp")}/>
+        <Image style={{flex:1, resizeMode:"contain", width:200,left:-5,top:80}} source={require("../images/logo.webp")}/>
 
         {/* mail */}
         <TextInput 
@@ -130,5 +116,5 @@ function LoginScreen({ navigation }: { navigation: any }) {
   );
 }
 
-export default App;
-``
+export default LoginScreen;
+
