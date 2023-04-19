@@ -62,7 +62,7 @@ export default function Navigation(){
     
     <NavigationContainer>
       
-      <Stack.Navigator initialRouteName="Login" >
+      <Stack.Navigator initialRouteName="Login">
       <Stack.Screen name="Tabs" component={Tabs} options={{headerShown:false}}/>
         <Stack.Screen name="Login" component={LoginScreen} options={{headerShown:false}} />
         <Stack.Screen name="FeedDetail" component={FeedDetail}  />
