@@ -7,6 +7,8 @@ import { ScrollView, TextInput } from "react-native-gesture-handler";
 import 'react-native-screens';
 import { useNavigation } from '@react-navigation/native';
 
+
+
 export default function Card(propi: any , hoopa:any) {
     const [username, setusername] = useState("usernameX");
     const userOne = users.users[1];
@@ -29,6 +31,8 @@ export default function Card(propi: any , hoopa:any) {
     setComment("");
     
   }
+
+  
 
 
 

@@ -5,7 +5,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import 'react-native-screens';
 
 
-
 function LoginScreen({ navigation }: { navigation: any }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -15,9 +14,10 @@ function LoginScreen({ navigation }: { navigation: any }) {
   
   async function Tokenss(){
     try {
-      const storedToken = await AsyncStorage.getItem('token');
+     const storedToken = await AsyncStorage.getItem('token');
       if (storedToken !== null ) {
         setToken(storedToken);
+
         navigation.navigate('Tabs');
         console.log(storedToken);
       } else {

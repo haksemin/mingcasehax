@@ -7,6 +7,7 @@ import 'react-native-screens';
 import Navigation from "./App";
 import Card from "./Card";
 import { NavigationContainer } from "@react-navigation/native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
 
@@ -18,9 +19,17 @@ function Feed() {
   const userOne = users.users[1];
   const userTwo = users.users[0];
   const userThree = users.users[2];
+  const [token, setToken] = useState(null);
 
- 
-
+getStoredToken();
+  async function getStoredToken() {
+    try {
+      const storedToken = await AsyncStorage.getItem('token');
+      setToken(storedToken);
+    } catch (error: any) {
+      console.log("Hata:", error.message);
+    }
+  }
 
 
   function Topbar() {
@@ -37,43 +46,6 @@ function Feed() {
       </View>
     );
   }
-
-
-  function BottomBar() {
-    return (
-      <View
-        style={{
-          backgroundColor: "#f4f4f4",
-          flex: 0.1,
-          height: 20,
-          shadowColor: "#000",
-          flexDirection:"row",
-          alignItems:"center",
-          justifyContent:"space-evenly",
-          shadowOffset: {
-            width: 0,
-            height: -3,
-          },
-          shadowOpacity: 0.04,
-          shadowRadius: 4.65,
-        }}>
-
-        <TouchableOpacity><Image source={require("../images/icons/home.png")} style={{height:40,width:40, }}/></TouchableOpacity>    
-        <TouchableOpacity><Image source={require("../images/icons/compass.png")} style={{height:40,width:40, }}/></TouchableOpacity>
-        <TouchableOpacity><Image source={require("../images/icons/add.png")} style={{height:40,width:40, }}/></TouchableOpacity>
-        <TouchableOpacity><Image source={require("../images/icons/heart.png")} style={{height:40,width:40, }}/></TouchableOpacity>
-        <TouchableOpacity><Image source={require("../images/icons/user.png")} style={{height:40,width:40, }}/></TouchableOpacity>
-        
-
-      </View>
-    );
-  }
-  
-    
-
-
-
-
 
 
 
@@ -98,7 +70,8 @@ function Feed() {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <Topbar />
-      <ScrollView style={{ flex: 1 }}>
+      {token !== null ? (
+        <ScrollView style={{ flex: 1 }}>
         <Card text={userOne.name} image={require('../images/tavuk.jpeg')} post={require("../images/posts/post0.jpeg")} posttext={userOne.posttext} corporatation={userOne.corp}/>
         <Card text={userTwo.name} image={require('../images/Hax.jpg')} post={require("../images/posts/post1.jpeg")} posttext={userTwo.posttext} corporatation={userTwo.corp}/> 
         <Card text = {userThree.name} image={require('../images/merveyorg.jpeg')} post={require("../images/posts/post2.jpeg")} posttext={userThree.posttext} corporatation={userThree.corp} />
@@ -112,11 +85,7 @@ function Feed() {
             borderRadius: 10,
           }}
         ></View>
-      </ScrollView>
-      
-      
-      
-      
+      </ScrollView>) :(null)}
     </SafeAreaView>
   );
 }
