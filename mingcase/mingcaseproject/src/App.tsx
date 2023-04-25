@@ -12,7 +12,9 @@ import Like from "./Like";
 import Ekle from "./Add";
 import Profile from "./Profile";
 import FeedDetail from "./FeedDetail"
+import LoginCheck from "./LoginCheck";
 import 'react-native-screens';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
 
@@ -22,7 +24,7 @@ const Stack = createNativeStackNavigator();
 
 const Tab = createBottomTabNavigator();
 
-function Tabs(){
+function Tabs(navigation:any){
     return(
         <Tab.Navigator>
             <Tab.Screen name="Feed" component={Feed} options={{headerShown:false , tabBarIcon:({focused}) =>(
@@ -57,15 +59,18 @@ function Tabs(){
 
 
 export default function Navigation(){
+
     
   return (
     
     <NavigationContainer>
       
-      <Stack.Navigator initialRouteName="Login">
+      <Stack.Navigator initialRouteName="LoginCheck">
       <Stack.Screen name="Tabs" component={Tabs} options={{headerShown:false}}/>
         <Stack.Screen name="Login" component={LoginScreen} options={{headerShown:false}} />
         <Stack.Screen name="FeedDetail" component={FeedDetail}  />
+        <Stack.Screen name="LoginCheck" component={LoginCheck} options={{headerShown:false}}/>
+        
         
         
       </Stack.Navigator>

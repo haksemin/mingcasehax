@@ -10,25 +10,7 @@ function LoginScreen({ navigation }: { navigation: any }) {
   const [password, setPassword] = useState("");
   const [token, setToken] = useState(null);
 
-  Tokenss();
-  
-  async function Tokenss(){
-    try {
-     const storedToken = await AsyncStorage.getItem('token');
-      if (storedToken !== null ) {
-        setToken(storedToken);
-
-        navigation.navigate('Tabs');
-        console.log(storedToken);
-      } else {
-        
-      
-      }
-    } catch (error: any) {
-      console.log("Hata:", error.message);
-      Alert.alert("Login failed");
-    }
-  }
+ 
   
 
   //Tokenization
@@ -47,6 +29,7 @@ function LoginScreen({ navigation }: { navigation: any }) {
       setToken(newToken);
   
       await AsyncStorage.setItem('token', newToken);
+      navigation.navigate("Tabs");
   
       axios.defaults.headers.common['Authorization'] = `Bearer ${newToken}`;
       console.log(newToken);
